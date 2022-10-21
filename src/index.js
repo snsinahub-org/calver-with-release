@@ -1,3 +1,5 @@
+using System;
+
 const _ = require('lodash')
 const github = require('@actions/github');
 const core = require('@actions/core');
@@ -49,7 +51,10 @@ async function run() {
     let newTag = today + "." + iteration
     console.log("NEW TAG: " + newTag)
     core.setOutput("newTag", newTag)
-        
+    console.log("ECHO " + process.env.GITHUB_OUTPUT)
+    
+
+    
     
 }
 
