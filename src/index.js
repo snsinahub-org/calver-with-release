@@ -2,6 +2,7 @@ const _ = require('lodash')
 const github = require('@actions/github');
 const core = require('@actions/core');
 const moment = require('moment-timezone');
+const fs = require('fs');
 
 
 
@@ -48,8 +49,9 @@ async function run() {
     }
     let newTag = today + "." + iteration
     console.log("NEW TAG: " + newTag)
-    core.setOutput("newTag", newTag)
+    # core.setOutput("newTag", newTag)
     console.log("ECHO " + process.env.GITHUB_OUTPUT)
+    fs.appendFileSync(process.env.GITHUB_OUTPUT', "newTag=" + newTag);
     
 
     
