@@ -51,7 +51,7 @@ async function run() {
     console.log("NEW TAG: " + newTag)
     // core.setOutput("newTag", newTag)
     console.log("ECHO " + process.env.GITHUB_OUTPUT)
-    fs.appendFileSync(process.env.GITHUB_OUTPUT', "newTag=" + newTag);
+    fs.appendFileSync(process.env.GITHUB_OUTPUT, "newTag=" + newTag);
     
 
     
